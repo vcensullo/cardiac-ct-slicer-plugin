@@ -13,11 +13,5 @@ Measures right and left ventricular volumes through chamber segmentation, ejecti
 which analyzes myocardial wall motion in three dimensions identifying wall motion abnormalities through motion tracking and visualization.
 This modular plugin provides cardiologists and radiologists with tools for cardiac function evaluation, with capacity for additional analytical modules in future updates.
 
-Author: V. Censullo
-
-Main contributors: 
-AITeRTC (Associazione Italiana Tecnici di Radiologia Esperti in TC)
-C. Zebele
-G. Spidalieri
-C. Maffei
+Author: V. Censullo, B.Sc - Main contributors:  AITeRTC  - C. Zebele, MD - G. Spidalieri, MD 
 
