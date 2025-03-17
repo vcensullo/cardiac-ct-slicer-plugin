@@ -1,6 +1,6 @@
 Cardiac CT plugin for Slicer - v. 0.1
 
-A plugin specifically designed for 4D Cardiac CT imaging analysis, This modular plugin providing cardiologists and radiologists with tools
+This is a Slicer plugin specifically designed for 4D Cardiac CT imaging analysis, This modular plugin providing cardiologists and radiologists with tools
 for cardiac function evaluation, with analitical additional analytical modules in future updates.
 In this version the plugin consists mainly of two modules:
 
