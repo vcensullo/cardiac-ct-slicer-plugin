@@ -815,7 +815,7 @@ class CardiacVolumeAnalysisWidget(ScriptedLoadableModuleWidget):
         'Volume ventricolo destro (ml)': self.volumeData['rv_volume'],
         'Volume ventricolo sinistro (ml)': self.volumeData['lv_volume'],
         'Massa miocardica (g)': self.volumeData['myocardial_mass'],
-        'Stroke volume VD (ml)': self.volumeData['rv_stroke_volume']
+        'Stroke volume VD (ml)': self.volumeData['rv_stroke_volume'],
         'Stroke volume VS (ml)': self.volumeData['lv_stroke_volume']
     })
     
