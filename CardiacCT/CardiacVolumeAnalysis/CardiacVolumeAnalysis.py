@@ -655,7 +655,8 @@ class CardiacVolumeAnalysisWidget(ScriptedLoadableModuleWidget):
       'rv_volume': [],
       'lv_volume': [],
       'myocardial_mass': [],
-      'stroke_volume': [0] * numPhases,
+      'lv_stroke_volume': [0] * numPhases,
+      'rv_stroke_volume': [0] * numPhases,
       'selected_edv_phase': 0,
       'selected_esv_phase': 0
     }
@@ -779,11 +780,12 @@ class CardiacVolumeAnalysisWidget(ScriptedLoadableModuleWidget):
       
       # Aggiorna tutti i valori di stroke volume
       for i in range(len(self.volumeData['phase'])):
-        sv_val = lv_sv if i == edv_index else 0
-        self.volumeData['stroke_volume'][i] = sv_val
+        # Memorizza i valori di SV per LV e RV
+        self.volumeData['lv_stroke_volume'][i] = lv_sv if i == edv_index else 0
+        self.volumeData['rv_stroke_volume'][i] = rv_sv if i == edv_index else 0
         
         # Aggiorna la cella nella tabella
-        self.resultsTable.setItem(i, 4, qt.QTableWidgetItem(f"{sv_val:.2f}"))
+        self.resultsTable.setItem(i, 4, qt.QTableWidgetItem(f"{lv_sv:.2f}"))
     
   def onExportButton(self):
     """Esporta i risultati in CSV e PDF"""
@@ -813,7 +815,8 @@ class CardiacVolumeAnalysisWidget(ScriptedLoadableModuleWidget):
         'Volume ventricolo destro (ml)': self.volumeData['rv_volume'],
         'Volume ventricolo sinistro (ml)': self.volumeData['lv_volume'],
         'Massa miocardica (g)': self.volumeData['myocardial_mass'],
-        'Stroke volume (ml)': self.volumeData['stroke_volume']
+        'Stroke volume VD (ml)': self.volumeData['rv_stroke_volume']
+        'Stroke volume VS (ml)': self.volumeData['lv_stroke_volume']
     })
     
     # Ottieni le fasi selezionate
